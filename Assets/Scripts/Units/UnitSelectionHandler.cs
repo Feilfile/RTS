@@ -10,7 +10,7 @@ public class UnitSelectionHandler : MonoBehaviour
 
     private Camera mainCamera;
 
-    private List<Unit> SelectedUnits = new List<Unit>();
+    public  List<Unit> SelectedUnits { get; } = new List<Unit>();
 
     void Start()
     {
