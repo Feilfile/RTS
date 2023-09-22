@@ -7,18 +7,31 @@ using UnityEngine.Events;
 
 public class Unit : NetworkBehaviour
 {
+    [SerializeField] private int resourceCost = 10;
     [SerializeField] private UnitMovement unitMovement = null;
+    [SerializeField] private Targeter targeter = null;
     [SerializeField] private UnityEvent onSelected = null;
     [SerializeField] private UnityEvent onDeselected = null;
+    [SerializeField] private Health health = null;
 
     public static event Action<Unit> ServerOnUnitSpawned;
     public static event Action<Unit> ServerOnUnitDespawned;
     public static event Action<Unit> AuthorityOnUnitSpawned;
     public static event Action<Unit> AuthorityOnUnitDespawned;
 
+    public int GetResourceCost()
+    {
+        return resourceCost;
+    }
+
     public UnitMovement GetUnitMovement() 
     { 
         return unitMovement; 
+    }
+
+    public Targeter GetTargeter()
+    {
+        return targeter;
     }
 
     #region Server
@@ -26,27 +39,33 @@ public class Unit : NetworkBehaviour
     public override void OnStartServer()
     {
         ServerOnUnitSpawned?.Invoke(this);
+        health.ServerOnDie += ServerDestroyUnit;
     }
 
     public override void OnStopServer()
     {
         ServerOnUnitDespawned?.Invoke(this);
+        health.ServerOnDie -= ServerDestroyUnit;
+    }
+
+    [Server]
+    private void ServerDestroyUnit()
+    {
+        NetworkServer.Destroy(gameObject);
     }
 
     #endregion
 
     #region Client
 
-    public override void OnStartClient()
+    public override void OnStartAuthority()
     {
-        if (isClientOnly || !isOwned) { return; }
-        
         AuthorityOnUnitSpawned?.Invoke(this);
     }
 
     public override void OnStopClient()
     {
-        if (isClientOnly || !isOwned) { return; }
+        if (!isOwned) { return; }
 
         AuthorityOnUnitDespawned?.Invoke(this);
     }

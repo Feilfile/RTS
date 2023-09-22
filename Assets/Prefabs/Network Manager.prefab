@@ -32,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5422264750775129539
 MonoBehaviour:
@@ -51,18 +51,22 @@ MonoBehaviour:
   autoStartServerBuild: 1
   autoConnectClientBuild: 0
   sendRate: 30
-  offlineScene: 
-  onlineScene: 
+  offlineScene: Assets/Scenes/Scene_Menu.unity
+  onlineScene: Assets/Scenes/Scene_Map1.unity
   transport: {fileID: 171784161783571163}
   networkAddress: localhost
   maxConnections: 100
   authenticator: {fileID: 0}
-  playerPrefab: {fileID: 2145150260289531765, guid: 1ce0bd32311685043bce467a5e0a5201, type: 3}
+  playerPrefab: {fileID: 5153831304450012746, guid: 1ce0bd32311685043bce467a5e0a5201, type: 3}
   autoCreatePlayer: 1
   playerSpawnMethod: 0
   spawnPrefabs:
-  - {fileID: 7858624601041844836, guid: 0ad1e3ea7006c0b4586cba8d9728d559, type: 3}
-  - {fileID: 7273699709460558244, guid: da47f0ee29aa8cb4eb343b277bfd3dc4, type: 3}
+  - {fileID: 8827676780562530980, guid: 0ad1e3ea7006c0b4586cba8d9728d559, type: 3}
+  - {fileID: 2471828480289213706, guid: 0f2c9b7606d063a48857553bc8d242f4, type: 3}
+  - {fileID: 2481194884398119019, guid: 54d7e8e8b6ddc5f4e954ab595ef0980a, type: 3}
+  - {fileID: 8746649251648016253, guid: c0f030607c63b914faea0275f128dfcb, type: 3}
+  - {fileID: 2471828480289213706, guid: 1abc9423f3c219a44bf845146ffd4d1f, type: 3}
+  - {fileID: 2471828480289213706, guid: 410b9729cd81ffc4ea7ba1a0cc3d2d88, type: 3}
   snapshotSettings:
     bufferTimeMultiplier: 2
     catchupNegativeThreshold: -1
@@ -74,7 +78,8 @@ MonoBehaviour:
     dynamicAdjustmentTolerance: 1
     deliveryTimeEmaDuration: 2
   timeInterpolationGui: 0
-  unitSpawnerPrefab: {fileID: 7273699709460558244, guid: da47f0ee29aa8cb4eb343b277bfd3dc4, type: 3}
+  unitSpawnerPrefab: {fileID: 2471828480289213706, guid: 0f2c9b7606d063a48857553bc8d242f4, type: 3}
+  gameOverHandlerPrefab: {fileID: 5501657053985210849, guid: c0f030607c63b914faea0275f128dfcb, type: 3}
 --- !u!114 &171784161783571163
 MonoBehaviour:
   m_ObjectHideFlags: 0

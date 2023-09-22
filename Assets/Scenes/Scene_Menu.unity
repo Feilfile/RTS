@@ -309,7 +309,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &923261931
+--- !u!1001 &1722159788
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -318,17 +318,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5422264750775129539, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
-      propertyPath: transport
+      propertyPath: gameOverHandlerPrefab
       value: 
-      objectReference: {fileID: 1376047060}
-    - target: {fileID: 5422264750775129539, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
-      propertyPath: onlineScene
-      value: Assets/Scenes/Scene_Map1.unity
-      objectReference: {fileID: 0}
-    - target: {fileID: 5422264750775129539, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
-      propertyPath: offlineScene
-      value: Assets/Scenes/Scene_Menu.unity
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5501657053985210849, guid: c0f030607c63b914faea0275f128dfcb, type: 3}
     - target: {fileID: 7144897542882164026, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
       propertyPath: m_Name
       value: Network Manager
@@ -380,42 +372,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7144897542882164026, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1376047060}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
---- !u!1 &1376047055 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7144897542882164026, guid: 61a4a83b6bba8a24eacb8a80278cfd68, type: 3}
-  m_PrefabInstance: {fileID: 923261931}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1376047060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376047055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b0fecffa3f624585964b0d0eb21b18e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  port: 7777
-  DualMode: 1
-  NoDelay: 1
-  Interval: 10
-  Timeout: 10000
-  RecvBufferSize: 7361536
-  SendBufferSize: 7361536
-  FastResend: 2
-  ReceiveWindowSize: 4096
-  SendWindowSize: 4096
-  MaxRetransmit: 40
-  MaximizeSocketBuffers: 1
-  ReliableMaxMessageSize: 297433
-  UnreliableMaxMessageSize: 1195
-  debugLog: 0
-  statisticsGUI: 0
-  statisticsLog: 0
